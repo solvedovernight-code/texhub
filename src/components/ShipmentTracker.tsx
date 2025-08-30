@@ -20,7 +20,8 @@ import {
   ExternalLink,
   Plane,
   Ship,
-  Car
+  Car,
+  Settings
 } from 'lucide-react';
 import { ShipmentDetails } from '../types/order';
 import { Input } from './ui/input';
