@@ -449,16 +449,16 @@ export function BookLibrary({ user }: BookLibraryProps) {
 
       {viewerOpen && selectedBook && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="mt-6"
         >
-          <div className="w-full h-full flex flex-col">
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden border border-border">
             <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              className="bg-card border-b border-border px-4 md:px-6 py-4 flex items-center justify-between shadow-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm px-4 md:px-6 py-4 flex items-center justify-between border-b border-border"
             >
               <div className="flex items-center gap-3">
                 <Book className="w-5 h-5 text-primary" />
@@ -483,7 +483,7 @@ export function BookLibrary({ user }: BookLibraryProps) {
                 </button>
               </div>
             </motion.div>
-            <div className="flex-1 w-full bg-background">
+            <div className="w-full bg-background" style={{ height: 'calc(100vh - 200px)' }}>
               <PDFViewer
                 pdfUrl={selectedBook.pdfUrl}
                 title={selectedBook.bookName}
